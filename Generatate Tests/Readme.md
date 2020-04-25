@@ -38,14 +38,14 @@ Generate Test.exe
 ### 3. File Generate Test.exe
 Sau khi làm 2 bước trên, bạn chỉ cần chạy file này là được. Các test cấu tạo như sau (giả sử from = "001")
 
-filebai
-  Test001
-    fileinp
-    fileout
-  Test002
-    fileinp
-    fileout
-  ...
+    filebai
+        Test001
+            fileinp
+            fileout
+        Test002
+            fileinp
+            fileout
+        ...
   
 Thư mục filebai nằm trong cùng 1 thư mục với maketest.txt và Generate Test.exe.
 
