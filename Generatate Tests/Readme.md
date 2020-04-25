@@ -4,7 +4,7 @@
 ------------------
 
 ### 1. File maketest.txt
-File này sử dụng để nhập dữ liệu. Các dữ liệu cụ thể tương ứng với lệnh nhập vào của chương trình như sau:
+File này sử dụng để nhập dữ liệu. Các dữ liệu cụ thể tương ứng với lệnh nhập vào của chương trình như sau (mỗi dòng 1 dữ liệu)
 
     cin >> filegen;   /// Chương trình tạo input. VD: gen.exe
     cin >> filerun;   /// Chương trình tạo output (code của các bạn). VD: WATER.exe
@@ -19,6 +19,7 @@ File này sử dụng để nhập dữ liệu. Các dữ liệu cụ thể tư�
     
     
 VD: 
+
     gen.exe
     1258.exe
     1258
