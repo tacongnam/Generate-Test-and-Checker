@@ -19,16 +19,16 @@ File này sử dụng để nhập dữ liệu. Các dữ liệu cụ thể tư�
     
     
 VD: 
-gen.exe
-1258.exe
-1258
-1258.inp
-1258.out
-01
-30
-10
-0
-0
+    gen.exe
+    1258.exe
+    1258
+    1258.inp
+    1258.out
+    01
+    30
+    10
+    0
+    0
 
 ### 2. File generator + solution
 Các bạn sẽ copy file generator (là filegen trong maketest) và solution (filerun trong maketest) vào cùng 1 thư mục với maketest.txt và 
