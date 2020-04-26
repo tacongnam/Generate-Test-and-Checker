@@ -1,22 +1,53 @@
-# Tool generate test (ver 20.04.26.1)
-- Lưu ý: Chương trình sử dụng hàm system(). Một số chương trình anti-virus có thể nhận diện nó như là virus. Xem thêm tại: http://www.cplusplus.com/articles/j3wTURfi/ . Lỗi này sẽ được fix tại các phiên bản sau.
+# Tool generate test (ver 20.04.26.2)
+- Lưu ý: 
+    - Chương trình sử dụng hàm system(). Một số chương trình anti-virus có thể nhận diện nó như là virus. Xem thêm tại: http://www.cplusplus.com/articles/j3wTURfi/ . Lỗi này sẽ được fix tại các phiên bản sau.
+
+    - Chương trình sử dụng testlib.h. Xem đầy đủ source code tại: https://github.com/MikeMirzayanov/testlib/blob/master/testlib.h. Xem thêm hướng dẫn về testlib.h tại https://codeforces.com/testlib.
+    
+    - Chương trình sử dụng chương trình nén thư mục Rar.exe của winRaR(R). Xem thêm về winRaR(R) tại: https://www.win-rar.com/ 
 
 ------------------
 
-### 1. File maketest.txt
+### Có gì mới?
+- Cho phép sử dụng validator (sử dụng thư viện testlib.h)
+- Đặt thời gian time limit cho solution
+- Sau khi sinh test xong sẽ tự động tạo file rar chứa thư mục test.
+
+### Mục đích
+Chương trình generate test được tạo ra với mục đích giúp mọi người có thể tạo ra một bộ test đơn giản để:
+- Tạo test cho các kỳ thi
+- Debug. Việc tạo test giúp chúng ta debug dễ dàng hơn.
+- Kiểm tra code. Tạo một bộ test từ code chính xác và chạy code của bạn với bộ test cũng là một cách để phát hiện lỗi sai trong code.
+
+### Hướng dẫn sử dụng
+- Bước 1: Truy cập https://github.com/tacongnam/Generate-Test-and-Checker
+- Bước 2: Chọn Clone or Download -> Download ZIP
+- Bước 3: Giải nén file Generate-Test-and-Checker-master.zip
+- Bước 4: Tại thư mục đã giải nén, vào thư mục Generate Tests
+- Bước 5: Giải nén file generate-test.rar
+
+
+5 bước trên chỉ dành cho người cài đặt lúc đầu. Đối với người thực hiện từ lần thứ hai trở đi, ta chỉ cần làm từ bước 6:
+
+- Bước 6: Tại thư mục generate-test, bạn sẽ thấy 5 file (giới thiệu tại phần dưới đây). Copy toàn bộ 5 file này vào nơi bạn muốn tạo thư mục chứa test.
+- Bước 7: Copy file generator (sinh test), file solution (code chuẩn), file validator (kiểm tra input - nếu có) vào cùng thư mục đó.
+- Bước 8: Tại file maketest.txt, bạn hãy nhập các dữ liệu về các file (xem tại phần dưới)
+- Bước 9: Click đúp vào file Generate Test.exe để chạy chương trình sinh test.
+- Bước 10: Sau khi chạy, test sẽ được sinh ra. Mở file logs.txt. Nếu file này không có gì hoặc "OK!" thì bạn đã sinh test thành công. Nếu không, bạn đã gặp vấn đề (sẽ được nêu trong file log).
+
+### 5 file trong thư mục
+##### 1. File maketest.txt
 File này sử dụng để nhập dữ liệu. Các dữ liệu cụ thể tương ứng với lệnh nhập vào của chương trình như sau (mỗi dòng 1 dữ liệu)
 
     cin >> filegen;   /// Chương trình tạo input. VD: gen.exe
     cin >> filerun;   /// Chương trình tạo output (code của các bạn). VD: WATER.exe
     cin >> filebai;   /// Tên bài làm. VD: WATER. Đây sẽ là tên thư mục chứa các test
-    cin >> fileinp;   /// Tên file input: VD: WATER.inp. Tên file này cần trùng với file dữ liệu đầu vào của code bạn.
-    cin >> fileout;   /// Tên file output: VD: WATER.out. Tên file này cần trùng với file dữ liệu đầu ra của code bạn.
-    cin >> from;      /// Test bắt đầu từ: VD: 001
+    cin >> fileinp;   /// Tên file input: VD: WATER.inp. Tên file này cần trùng với file dữ liệu đầu vào của code của bạn.
+    cin >> fileout;   /// Tên file output: VD: WATER.out. Tên file này cần trùng với file dữ liệu đầu ra của code của bạn.
+    cin >> from;      /// Test bắt đầu từ: VD: 59
     cin >> numoftest; /// Số test. VD: 100
-    cin >> timelimit; /// Thời gian chạy cho mỗi test (timelimit chưa áp dụng cho ver 20.04.26.1 nhưng vẫn phải có trong maketest)
-    cin >> novalid;   /// Sử dụng validator (dùng testlib.h của Codeforces. Validator chưa áp dụng cho ver 20.04.26.1 nhưng vẫn phải có trong maketest, giá trị nhập vào là 0)
-    cin >> nocheck;   /// Sử dụng checker (dùng testlib.h của Codeforces. Checker chưa áp dụng cho ver 20.04.26.1 nhưng vẫn phải có trong maketest, giá trị nhập vào là 0)
-    
+    cin >> timelimit; /// Thời gian chạy cho mỗi test (số thực, đơn vị: giây). VD: 0.5
+    cin >> novalid;   /// Sử dụng validator (dùng testlib.h của Codeforces. 1 có nghĩa là sử dụng, 0 có nghĩa là không sử dụng)
     
 VD: 
 
@@ -25,30 +56,93 @@ VD:
     1258
     1258.inp
     1258.out
-    01
+    12
     30
     10
-    0
-    0
+    1
 
-### 2. File generator + solution
-Các bạn sẽ copy file generator (là filegen trong maketest) và solution (filerun trong maketest) vào cùng 1 thư mục với maketest.txt và 
-Generate Test.exe
+File trên có nghĩa: 
 
-### 3. File Generate Test.exe
-Sau khi làm 2 bước trên, bạn chỉ cần chạy file này là được. Các test cấu tạo như sau (giả sử from = "001")
+Tạo thư mục mới chứa test có tên là 1258. 
 
-    filebai
-        Test001
-            fileinp
-            fileout
-        Test002
-            fileinp
-            fileout
-        ...
+Các test này được đánh số từ 12 -> 41. 
+
+File input được sinh ra có tên: 1258.inp, file output được sinh ra có tên 1258.out. 
+
+File input được sinh bởi gen.exe. File output được tạo ra bởi 1258.exe. File input được kiểm tra bởi validator.exe
+
+Thời gian chạy cho mỗi test tối đa là 10 giây.
+
+*Chú ý: (Áp dụng cho Code::Blocks, các phần mềm khác làm tương tự.)
+
+- Để lấy được filegen, filerun, validator, bạn sẽ chạy chương trình đó (F9, đảm bảo không có bug). Tại thư mục Project tương ứng, vào bin/Debug/, bạn sẽ thấy một file .exe. Đổi tên file này thành tên tương ứng (VD: gen, validator,...) rồi copy file này vào nơi sinh test (cùng với 5 file có sẵn).
+
+- File validator bắt buộc phải để là validator.exe. Nếu bạn không biết cách tạo ra file này, xem thêm tại https://codeforces.com/blog/entry/18426 hoặc nhập 0 tại dòng novalid (dòng cuối của maketest.txt, không kiểm tra input nữa).
+
+- fileinp, fileout cần trùng với file dữ liệu đầu vào và đầu ra được ghi trong code của bạn.
+ 
+- Khi chạy file Generate Test.exe, console sẽ hiển thị đầy đủ thông tin trong vòng 5s ban đầu. Nếu gặp lỗi, bạn có thể tắt console ngay lập tức rồi sửa lại file maketest.txt
+
+##### 2. File testlib.h
+Đây là thư viện testlib.h được sử dụng với rất nhiều các tính năng đặc biệt. Xem đầy đủ source code tại: https://github.com/MikeMirzayanov/testlib/blob/master/testlib.h. Xem thêm hướng dẫn về testlib.h tại https://codeforces.com/testlib.
+Nếu lỡ xoá file này, bạn có thể vào link github trên để tải lại testlib.h rồi đưa file vào thư mục như cũ.
+
+##### 3. File Rar.exe
+Đây là chương trình nén file lấy từ WinRaR. Nếu lỡ xoá file này, bạn hãy vào thư mục WinRaR được cài đặt trong máy tính bạn (mặc định: C:\Program Files\WinRAR\) rồi copy file Rar.exe rồi paste file vào thư mục như cũ)
+
+##### 4. File Generate Test.exe
+Chương trình sinh test. Chỉ cần nhấn đúp chuột để chạy chương trình này sau khi nhập đủ số liệu ở file maketest.txt là xong.
+
+##### 5. File logs.txt
+File ghi lại lỗi nếu gặp lỗi trong lúc sinh test. Các lỗi sẽ gặp là:
+- Something are error. It can be your generator. Fix them and try again.
   
-Thư mục filebai nằm trong cùng 1 thư mục với maketest.txt và Generate Test.exe.
+  Error code: -1
+  
+  -> Generator bị lỗi (file sinh test)
 
-!!! Chú ý: 
-- Nếu thư mục filebai đã có sẵn, đảm bảo các test in ra không trùng số thứ tự với các test có sẵn
-- from cần có số chữ số = số chữ số của test to nhất bạn tạo. VD bạn muốn tạo 30 test từ test 1, from = "01"; tạo 120 test từ test 1, from = "001".
+- Something are error. It can be your input or your validator. Fix them and try again.
+
+  Error code: 1
+  
+  -> Validator hoặc input bị lỗi.
+  
+- Something are error. Your solution doesn't return 0. Fix it and try again.
+
+  Error code: 2
+  
+  -> Code solution không trả về 0 (return 0;) khi kết thúc chương trình.
+  
+- Something are error. Your code has TLE verdict. Fix it and try again.
+
+  Error code: 3
+  
+  -> Code solution bị quá timelimit.
+  
+### Kết quả file chạy:
+Sau khi chạy, một thư mục mới có dạng như sau được tạo ra (giả sử tạo 10 test, from = 1)
+
+        filebai
+            Test1
+                fileinp
+                fileout
+            Test2
+                fileinp
+                fileout
+            ...
+            Test10
+               fileinp
+               fileout
+           
+Một tệp rar tương ứng chứa toàn bộ thư mục trên cũng sẽ được tạo ra.
+
+*Chú ý: 
+
+- Thư mục filebai phải:
+    + Chưa tồn tại tại nơi sinh test (cùng với 5 file có sẵn), hoặc:
+    + Đã tồn tại, nhưng các test bạn muốn sinh phải không trùng với các test có sẵn trong thư mục.
+  
+  Nếu không, thư mục chứa các test trùng sẽ không nằm trong thư mục filebai như dạng trên!
+  
+--------------------
+2020 - tacongnam
