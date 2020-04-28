@@ -1,0 +1,9 @@
+﻿Xoá dòng này và nhập file sinh input của bạn: gen.cpp / gen.exe
+Xoá dòng này và nhập file code chuẩn của bạn: 1258.cpp / 1258.exe
+Xoá dòng này và nhập tên bài: 1258
+Xoá dòng này và nhập tên file input: 1258.inp
+Xoá dòng này và nhập tên file output:1258.out
+Xoá dòng này và nhập số thứ tự test bắt đầu: 1
+Xoá dòng này và nhập số lượng test: 10
+Xoá dòng này và nhập giới hạn thời gian chạy: 1
+Xoá dòng này và nhập 0/1 để không / có sử dụng file validator.cpp / validator.exe: 0
