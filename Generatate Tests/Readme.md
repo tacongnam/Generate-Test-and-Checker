@@ -6,7 +6,7 @@
     
     - Chương trình sử dụng chương trình nén thư mục Rar.exe của winRaR(R). Xem thêm về winRaR(R) tại: https://www.win-rar.com/ 
     
-    - Chương trình sử dụng dụng MinGW để chạy các file .cpp, .c.
+    - Chương trình sử dụng dụng trình biên dịch để chạy các file .cpp, .c.
 
     - Đây là bản Beta. Nếu bạn muốn tải bản ổn định cũ hơn, vui lòng vào: https://github.com/tacongnam/Generate-Test-and-Checker/tree/master/old%20version
     
@@ -37,7 +37,7 @@ Chương trình generate test được tạo ra với mục đích giúp mọi n
 
 - Bước 3: Giải nén file Generate-Test-and-Checker-master.zip
 
-- Bước 4: Cài đặt MinGW. Bạn có thể cài bằng cách tải từ Internet, hoặc chạy file tdm-gcc-9.2.0.exe trong thư mục generate-test. Vui lòng để địa chỉ cài đặt là C:\...., phần tên ..... sẽ phụ thuộc tuỳ theo phần mềm bạn tải.
+- Bước 4: Cài đặt trình biên dịch. Bạn có thể cài bằng cách tải từ Internet (gợi ý: tdm-gcc: https://jmeubank.github.io/tdm-gcc/). Vui lòng để địa chỉ cài đặt là C:\...., phần tên ..... sẽ phụ thuộc tuỳ theo phần mềm bạn tải.
 
 
 ### Hướng dẫn sử dụng
