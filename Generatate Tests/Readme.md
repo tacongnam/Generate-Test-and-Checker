@@ -13,7 +13,7 @@
 ------------------
 
 ### Có gì mới? (20.04.28.1 Beta)
-- Cho phép chạy sinh test trực tiếp với các file .cpp, .c (qua MinGW) thay vì qua file .exe như cũ.
+- Cho phép chạy sinh test trực tiếp với các file .cpp, .c (qua trình biên dịch) thay vì qua file .exe như cũ.
 - Xoá các file thừa (file inp, file out) trong thư mục sau khi sinh test xong.
 
 ### Có gì mới? (20.04.26.2)
