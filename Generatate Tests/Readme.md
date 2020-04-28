@@ -37,16 +37,12 @@ Chương trình generate test được tạo ra với mục đích giúp mọi n
 
 - Bước 3: Giải nén file Generate-Test-and-Checker-master.zip
 
-- Bước 4: Tại thư mục đã giải nén, vào thư mục Generate Tests
-
-- Bước 5: Giải nén file generate-test.rar
-
-- Bước 6: Cài đặt MinGW. Bạn có thể cài bằng cách tải từ Internet, hoặc chạy file tdm-gcc-9.2.0.exe trong thư mục generate-test. Vui lòng để địa chỉ cài đặt là C:\...., phần tên ..... sẽ phụ thuộc tuỳ theo phần mềm bạn tải.
+- Bước 4: Cài đặt MinGW. Bạn có thể cài bằng cách tải từ Internet, hoặc chạy file tdm-gcc-9.2.0.exe trong thư mục generate-test. Vui lòng để địa chỉ cài đặt là C:\...., phần tên ..... sẽ phụ thuộc tuỳ theo phần mềm bạn tải.
 
 
 ### Hướng dẫn sử dụng
 
-- Bước 1: Tại thư mục generate-test, bạn sẽ thấy 5 file (giới thiệu tại phần dưới đây). Copy toàn bộ 5 file này vào nơi bạn muốn tạo thư mục chứa test.
+- Bước 1: Tại thư mục 20.04.28.1.Beta, bạn sẽ thấy 5 file (giới thiệu tại phần dưới đây). Copy toàn bộ 5 file này vào nơi bạn muốn tạo thư mục chứa test.
 
 - Bước 2: Copy file generator (sinh test), file solution (code chuẩn), file validator (kiểm tra input - nếu có) vào cùng thư mục đó.
 
